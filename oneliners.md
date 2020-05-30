@@ -45,3 +45,8 @@ _.filter(kiwi.state.getActiveBuffer().getMessages(), {type: "privmsg"}).length;
 ```javascript
 kiwi.on('all', function(name, event){ console.log(name, event); })
 ```
+
+### divert *raw to console
+```javascript
+kiwi.state.setting('showRaw',true);kiwi.on('message.new',(ev)=>{if(ev.buffer.name==='*raw')console.log(ev.message.message)});
+```
